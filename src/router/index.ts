@@ -40,7 +40,6 @@ const ifAuthenticated = (to: Route, from: Route, next: NavigationGuardNext<Vue>)
       }
     }
     next()
-    console.error(to.query.theme);
   } else {
     next('/login')
   }

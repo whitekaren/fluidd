@@ -19,7 +19,6 @@ const getBrowserLocale = (options = {}) => {
   const trimmedLocale = opt.countryCodeOnly
     ? navigatorLocale.trim().split(/-|_/)[0]
     : navigatorLocale.trim()
-  console.error(trimmedLocale);
   return trimmedLocale
 }
 

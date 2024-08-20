@@ -9,8 +9,6 @@ import type { AppTableHeader } from '@/types'
 import type { FileFilterType } from '../files/types'
 import { TinyColor } from '@ctrl/tinycolor'
 
-//B
-import router from '../../router'
 
 export const actions: ActionTree<ConfigState, RootState> = {
   /**
@@ -56,7 +54,6 @@ export const actions: ActionTree<ConfigState, RootState> = {
   /**
    * Sets, and saves a locale change.
    */
-  //B
   async onLocaleChange ({ dispatch, state }, payload: string) {
     // Set the correct language.
     // vuetify.framework.lang.current = state.uiSettings.general.locale
@@ -72,8 +69,6 @@ export const actions: ActionTree<ConfigState, RootState> = {
       ? await loadLocaleMessagesAsync(payload)
       : await loadLocaleMessagesAsync(startingLocale)
 
-    // console.error(locale);
-    // console.error(router.currentRoute.query.lang);
     // If the locale doesn't match what we have in settings, update it.
     if (
       state.uiSettings.general.locale !== payload

@@ -401,7 +401,6 @@ export const Filters = {
    * Determines API urls from a base url
    */
   getApiUrls (apiUrl: string): ApiConfig {
-    console.error(apiUrl)
     if (
       !apiUrl.startsWith('http://') &&
       !apiUrl.startsWith('https://')
