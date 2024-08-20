@@ -22,12 +22,25 @@ import Icons from '@/views/Icons.vue'
 
 Vue.use(VueRouter)
 
+//B
 const ifAuthenticated = (to: Route, from: Route, next: NavigationGuardNext<Vue>) => {
   if (
     router.app.$store.getters['auth/getAuthenticated'] ||
     !router.app.$store.state.socket.apiConnected
   ) {
+    if(to.query.theme!== null){
+      if(to.query.theme == "light"){
+        router.app.$store.dispatch('config/updateTheme', {
+          isDark: false
+        })
+      }else if(to.query.theme == "dark"){
+        router.app.$store.dispatch('config/updateTheme', {
+          isDark: true
+        })
+      }
+    }
     next()
+    console.error(to.query.theme);
   } else {
     next('/login')
   }

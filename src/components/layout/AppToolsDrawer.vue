@@ -16,8 +16,8 @@
       <v-divider />
       <system-commands @click="open = false" />
     </v-list>
-
-    <system-printers @click="open = false" />
+    
+    <!-- <system-printers @click="open = false" /> -->
 
     <system-layout
       v-if="socketConnected && authenticated"

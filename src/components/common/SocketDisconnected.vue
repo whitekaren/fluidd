@@ -9,9 +9,6 @@
         class="subtitle-1 text-center"
         cols="12"
       >
-        <div v-if="activeInstance">
-          {{ activeInstance.apiUrl }}
-        </div>
         <span v-if="socketConnecting">{{ $t('app.socket.msg.connecting') }}</span>
         <span v-if="!socketConnecting">{{ $t('app.socket.msg.no_connection') }}</span>
       </v-col>

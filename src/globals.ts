@@ -502,7 +502,7 @@ export const SupportedLocales = Object.freeze([
   { name: 'Afrikaans', code: 'af' },
   { name: 'Čeština', code: 'cs' },
   { name: '简体中文', code: 'zh-CN' },
-  { name: '繁體中文', code: 'zh-HK' },
+  { name: '繁體中文', code: 'zh-TW' },
   { name: 'Deutsch', code: 'de' },
   { name: 'Español', code: 'es' },
   { name: 'Français', code: 'fr' },

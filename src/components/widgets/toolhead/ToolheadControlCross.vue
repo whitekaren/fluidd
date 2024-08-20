@@ -13,7 +13,7 @@
           :color="axisButtonColor(yHomed)"
           :disabled="axisButtonDisabled(yHomed, yHasMultipleSteppers)"
           icon="$up"
-          @click="sendMoveGcode('Y', toolheadMoveLength)"
+          @click="sendMoveGcode('Y', toolheadMoveLength,true)"
         />
       </v-col>
       <v-col
@@ -129,7 +129,7 @@
           :color="axisButtonColor(yHomed)"
           :disabled="axisButtonDisabled(yHomed, yHasMultipleSteppers)"
           icon="$down"
-          @click="sendMoveGcode('Y', toolheadMoveLength, true)"
+          @click="sendMoveGcode('Y', toolheadMoveLength)"
         />
       </v-col>
       <v-col

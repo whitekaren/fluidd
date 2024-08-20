@@ -12,9 +12,14 @@ const getBrowserLocale = (options = {}) => {
     return undefined
   }
 
+  if (navigatorLocale == "zh-CN" || navigatorLocale == "zh-TW") {
+    return navigatorLocale
+  }
+
   const trimmedLocale = opt.countryCodeOnly
     ? navigatorLocale.trim().split(/-|_/)[0]
     : navigatorLocale.trim()
+  console.error(trimmedLocale);
   return trimmedLocale
 }
 
