@@ -49,7 +49,7 @@
             :disabled="!klippyReady"
             small
             block
-            @click="sendZAdjustGcode('+')"
+            @click="sendZAdjustGcode('-')"
           >
             <v-icon small>
               $zUp
@@ -65,7 +65,7 @@
             :disabled="!klippyReady"
             small
             block
-            @click="sendZAdjustGcode('-')"
+            @click="sendZAdjustGcode('+')"
           >
             <v-icon small>
               $zDown
