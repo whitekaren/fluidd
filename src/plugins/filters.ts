@@ -401,6 +401,9 @@ export const Filters = {
    * Determines API urls from a base url
    */
   getApiUrls (apiUrl: string): ApiConfig {
+
+    // let test_url = "zcn7az54x2jd1uvl1p.aliyun.qidi3dprinter.com:7680"
+
     if (
       !apiUrl.startsWith('http://') &&
       !apiUrl.startsWith('https://')

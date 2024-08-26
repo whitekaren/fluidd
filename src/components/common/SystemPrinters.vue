@@ -71,9 +71,9 @@ export default class SystemPrinters extends Mixins(StateMixin) {
 
   mounted () {
     // If we have no api's configured at all, open the dialog.
-    if (this.$store.state.config.apiUrl === '') {
-      this.instanceDialogOpen = true
-    }
+    // if (this.$store.state.config.apiUrl === '') {
+    //   this.instanceDialogOpen = true
+    // }
   }
 
   removeInstance (instance: InstanceConfig) {

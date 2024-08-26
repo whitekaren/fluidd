@@ -104,9 +104,9 @@ export default class CameraMixin extends Vue {
   }
 
   buildAbsoluteUrl (url: string) {
-    const { origin } = new URL(document.URL)
+    // const { origin } = new URL(document.URL)
 
-    return new URL(url, origin)
+    return new URL(url, this.$store.state.config.apiUrl as string)
   }
 
   startPlayback () {

@@ -20,6 +20,12 @@ import NotFound from '@/views/NotFound.vue'
 import Login from '@/views/Login.vue'
 import Icons from '@/views/Icons.vue'
 
+
+import { appInit } from '../init'
+import type { InitConfig } from '../store/config/types'
+import { Router } from 'workbox-routing'
+
+
 Vue.use(VueRouter)
 
 //B
@@ -28,7 +34,21 @@ const ifAuthenticated = (to: Route, from: Route, next: NavigationGuardNext<Vue>)
     router.app.$store.getters['auth/getAuthenticated'] ||
     !router.app.$store.state.socket.apiConnected
   ) {
-    if(to.query.theme!== null){
+    if(to.query.url !=null){
+      router.app.$socket.close()
+
+      const url = to.query.url as string;
+
+      const apiConfig = Vue.$filters.getApiUrls(url + '.aws.qidi3dprinter.com:7680')
+
+      appInit(apiConfig, router.app.$store.state.config.hostConfig)
+      .then((config: InitConfig) => {
+        if (config.apiConfig.socketUrl && config.apiConnected && config.apiAuthenticated) {
+          Vue.$socket.connect(config.apiConfig.socketUrl)
+        }
+      })
+    }
+    if(to.query.theme!= null){
       if(to.query.theme == "light"){
         router.app.$store.dispatch('config/updateTheme', {
           isDark: false
@@ -45,6 +65,9 @@ const ifAuthenticated = (to: Route, from: Route, next: NavigationGuardNext<Vue>)
   }
 }
 
+// http://api2_test.qidi3dprinter.com/#/?url=nt02qvpzmqujcvpsmr.aliyun.qidi3dprinter.com
+// http://nt02qvpzmqujcvpsmr.aliyun.qidi3dprinter.com:7680
+// http://a4hh223b8ll6uhrnnk.aliyun.qidi3dprinter.com:7680
 const defaultRouteConfig: Partial<RouteConfig> = {
   beforeEnter: ifAuthenticated,
   meta: {

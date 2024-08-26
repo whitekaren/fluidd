@@ -80,7 +80,7 @@ const getApiConfig = async (hostConfig: HostConfig): Promise<ApiConfig | Instanc
     const { signal } = abortController
 
     const defaultOnTimeout = async () => {
-      await sleep(5000, signal)
+      // await sleep(5000, signal)
 
       return {
         apiUrl: '',
@@ -89,13 +89,13 @@ const getApiConfig = async (hostConfig: HostConfig): Promise<ApiConfig | Instanc
     }
 
     return await promiseAny([
-      ...endpoints.map(async (endpoint) => {
-        const apiEndpoints = Vue.$filters.getApiUrls(endpoint)
+      // ...endpoints.map(async (endpoint) => {
+      //   const apiEndpoints = Vue.$filters.getApiUrls(endpoint)
 
-        await webSocketWrapper(apiEndpoints.socketUrl, signal)
+      //   await webSocketWrapper(apiEndpoints.socketUrl, signal)
 
-        return apiEndpoints
-      }),
+      //   return apiEndpoints
+      // }),
       defaultOnTimeout()
     ])
   } finally {

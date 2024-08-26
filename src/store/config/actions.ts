@@ -8,7 +8,7 @@ import { Waits } from '@/globals'
 import type { AppTableHeader } from '@/types'
 import type { FileFilterType } from '../files/types'
 import { TinyColor } from '@ctrl/tinycolor'
-
+import router from '../../router'
 
 export const actions: ActionTree<ConfigState, RootState> = {
   /**
@@ -22,12 +22,12 @@ export const actions: ActionTree<ConfigState, RootState> = {
    * Init any file configs we may have.
    */
   async initUiSettings ({ commit, dispatch, state }, payload: Partial<UiSettings>) {
-    commit('setInitUiSettings', payload)
+    // commit('setInitUiSettings', payload)
 
-    // Vuetify sometimes fails to apply the changes in a single operation but
-    // doing it twice fixes it
-    dispatch('onThemeChange', state.uiSettings.theme)
-    dispatch('onThemeChange', state.uiSettings.theme)
+    // // Vuetify sometimes fails to apply the changes in a single operation but
+    // // doing it twice fixes it
+    // dispatch('onThemeChange', state.uiSettings.theme)
+    // dispatch('onThemeChange', state.uiSettings.theme)
 
     // Set the correct language.
     if (
