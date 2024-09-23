@@ -23,21 +23,22 @@ export const actions: ActionTree<VersionState, RootState> = {
   /**
    * Inits any file config we may have.
    */
+  //B
   async onUpdateStatus ({ commit, dispatch, getters }, payload) {
-    commit('setUpdateStatus', payload)
+    // commit('setUpdateStatus', payload)
 
-    if (getters.hasUpdates) {
-      dispatch('notifications/pushNotification', {
-        id: 'updates-available',
-        title: i18n.t('app.version.label.updates_available'),
-        to: '/settings#versions',
-        btnText: i18n.t('app.version.btn.view_versions'),
-        type: 'info',
-        merge: true
-      }, { root: true })
-    } else {
-      dispatch('notifications/clearNotification', 'updates-available', { root: true })
-    }
+    // if (getters.hasUpdates) {
+    //   dispatch('notifications/pushNotification', {
+    //     id: 'updates-available',
+    //     title: i18n.t('app.version.label.updates_available'),
+    //     to: '/settings#versions',
+    //     btnText: i18n.t('app.version.btn.view_versions'),
+    //     type: 'info',
+    //     merge: true
+    //   }, { root: true })
+    // } else {
+    //   dispatch('notifications/clearNotification', 'updates-available', { root: true })
+    // }
   },
 
   /**

@@ -10,9 +10,9 @@ export const getters: GetterTree<WebcamsState, RootState> = {
 
   getEnabledWebcams: (state, getters) => {
     const webcams = getters.getWebcams as WebcamConfig[]
-
+    //B
     return webcams
-      .filter(webcam => webcam.enabled)
+      .filter(webcam => (webcam.enabled == true || webcam.enabled==undefined))
   },
 
   getVisibleWebcams: (state, getters) => {

@@ -43,7 +43,7 @@ export const actions: ActionTree<ServerState, RootState> = {
       }
     }
   },
-
+  //B
   async checkMoonrakerMinVersion ({ state, dispatch }) {
     const moonrakerVersion = state.info.moonraker_version ?? '?'
 
@@ -56,18 +56,18 @@ export const actions: ActionTree<ServerState, RootState> = {
       valid(Globals.MOONRAKER_MIN_VERSION) &&
       !gte(fullMoonrakerVersion, Globals.MOONRAKER_MIN_VERSION)
     ) {
-      dispatch('notifications/pushNotification', {
-        id: `old-moonraker-${moonrakerVersion}`,
-        title: 'Moonraker',
-        description: i18n.t('app.version.label.old_component_version', { name: 'Moonraker', version: Globals.MOONRAKER_MIN_VERSION }),
-        to: '/settings#versions',
-        btnText: i18n.t('app.version.btn.view_versions'),
-        type: 'warning',
-        merge: true
-      }, { root: true })
+      // dispatch('notifications/pushNotification', {
+      //   id: `old-moonraker-${moonrakerVersion}`,
+      //   title: 'Moonraker',
+      //   description: i18n.t('app.version.label.old_component_version', { name: 'Moonraker', version: Globals.MOONRAKER_MIN_VERSION }),
+      //   to: '/settings#versions',
+      //   btnText: i18n.t('app.version.btn.view_versions'),
+      //   type: 'warning',
+      //   merge: true
+      // }, { root: true })
     }
   },
-
+  //B
   async checkKlipperMinVersion ({ state, dispatch }) {
     const klipperVersion = state.system_info?.software_version ?? '?'
 
@@ -80,15 +80,15 @@ export const actions: ActionTree<ServerState, RootState> = {
       valid(Globals.KLIPPER_MIN_VERSION) &&
       !gte(fullKlipperVersion, Globals.KLIPPER_MIN_VERSION)
     ) {
-      dispatch('notifications/pushNotification', {
-        id: `old-klipper-${klipperVersion}`,
-        title: 'Klipper',
-        description: i18n.t('app.version.label.old_component_version', { name: 'Klipper', version: Globals.KLIPPER_MIN_VERSION }),
-        to: '/settings#versions',
-        btnText: i18n.t('app.version.btn.view_versions'),
-        type: 'warning',
-        merge: true
-      }, { root: true })
+      // dispatch('notifications/pushNotification', {
+      //   id: `old-klipper-${klipperVersion}`,
+      //   title: 'Klipper',
+      //   description: i18n.t('app.version.label.old_component_version', { name: 'Klipper', version: Globals.KLIPPER_MIN_VERSION }),
+      //   to: '/settings#versions',
+      //   btnText: i18n.t('app.version.btn.view_versions'),
+      //   type: 'warning',
+      //   merge: true
+      // }, { root: true })
     }
   },
 
