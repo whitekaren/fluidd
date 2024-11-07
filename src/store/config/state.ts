@@ -40,7 +40,7 @@ export const defaultState = (): ConfigState => {
         useGcodeCoords: false,
         zAdjustDistances: [0.005, 0.01, 0.025, 0.050],
         enableVersionNotifications: true,
-        confirmOnEstop: false,
+        confirmOnEstop: true,
         confirmOnPowerDeviceChange: false,
         confirmOnSaveConfigAndRestart: true,
         sectionsToIgnorePendingConfigurationChanges: [],
@@ -71,9 +71,9 @@ export const defaultState = (): ConfigState => {
       theme: {
         isDark: true,
         logo: {
-          src: 'logo_fluidd.svg'
+          src: 'logo_qidi.svg'
         },
-        color: '#2196F3',
+        color: '#5B7AEA',
         backgroundLogo: true
       },
       editor: {
