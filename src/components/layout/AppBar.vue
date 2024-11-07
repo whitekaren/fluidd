@@ -49,7 +49,7 @@
         />
       </div>
 
-      <div v-if="socketConnected && !isMobileViewport && authenticated">
+      <div v-if="socketConnected && authenticated">
         <v-tooltip bottom>
           <template #activator="{ on, attrs }">
             <app-btn

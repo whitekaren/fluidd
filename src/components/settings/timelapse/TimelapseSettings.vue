@@ -147,9 +147,6 @@ export default class TimelapseSettings extends Mixins(StateMixin) {
     return [{
       text: this.$tc('app.timelapse.setting.mode_layermacro'),
       value: 'layermacro'
-    }, {
-      text: this.$tc('app.timelapse.setting.mode_hyperlapse'),
-      value: 'hyperlapse'
     }]
   }
 

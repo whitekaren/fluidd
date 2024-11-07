@@ -27,7 +27,7 @@
       :timeout="flashMessageState.timeout"
     />
 
-    <v-btn
+    <!-- <v-btn
       v-if="isMobileViewport && authenticated && socketConnected"
       x-small
       fab
@@ -40,7 +40,7 @@
       @click="emergencyStop()"
     >
       <v-icon>$estop</v-icon>
-    </v-btn>
+    </v-btn> -->
 
     <v-main :style="customBackgroundImageStyle">
       <!-- <pre>authenticated {{ authenticated }}, socketConnected {{ socketConnected }}, apiConnected {{ apiConnected }}</pre> -->

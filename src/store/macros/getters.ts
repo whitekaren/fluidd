@@ -69,18 +69,18 @@ export const getters: GetterTree<MacrosState, RootState> = {
   getVisibleMacros: (state, getters) => {
     const defaultCategory = { id: '0', name: null }
     const categories = [...state.categories, defaultCategory]
-
+    const filteredList = ['autotune_shapers', 'bed_mesh_calibrate', 'beep','beep_off','beep_on','clear_nozzle','clear_nozzle_plr','detect_interruption','g31','g32','get_zoffset','log_z','m0','m4027','m4028','m4029','m4030','m4031','m8029','move_subzoffset','save_last_file','save_zoffset','set_zoffset','test_zoffset','z_vibrate','zoffset']
+    
     return categories
       .map(({ id, name }) => ({
         id,
         name,
-        macros: getters.getMacrosByCategory(id).filter((macro: Macro) => macro.visible) as Macro[]
+        macros: getters.getMacrosByCategory(id).filter((macro: Macro) => macro.visible && !filteredList.includes(macro.name)) as Macro[]
       }))
       .filter(category => category.macros.length > 0)
       .sort((a, b) => {
         if (!a.name) return 1
         if (!b.name) return -1
-
         return a.name.localeCompare(b.name)
       })
   },
@@ -95,9 +95,9 @@ export const getters: GetterTree<MacrosState, RootState> = {
       : categoryId
 
     const macros = getters.getMacros as Macro[]
-
+    const filteredList = ['autotune_shapers', 'bed_mesh_calibrate', 'beep','beep_off','beep_on','clear_nozzle','clear_nozzle_plr','detect_interruption','g31','g32','get_zoffset','log_z','m0','m4027','m4028','m4029','m4030','m4031','m8029','move_subzoffset','save_last_file','save_zoffset','set_zoffset','test_zoffset','z_vibrate','zoffset']
     return macros
-      .filter(macro => macro.categoryId === id)
+      .filter(macro => macro.categoryId === id  && !filteredList.includes(macro.name))
       .sort((a: Macro, b: Macro) => {
         // Sorts preferrentially by order, then by name
         // This offers backward compatibility with macros that have no order

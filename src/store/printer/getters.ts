@@ -157,7 +157,7 @@ export const getters: GetterTree<PrinterState, RootState> = {
       .map(type => {
         switch (type) {
           case 'file':
-            return getters.getFileRelativePrintProgress
+            return getters.getSlicerPrintProgress
 
           case 'fileAbsolute':
             return getters.getFileAbsolutePrintProgress
@@ -499,7 +499,7 @@ export const getters: GetterTree<PrinterState, RootState> = {
 
           const color = Vue.$colorset.next(getKlipperType(e), e)
           const prettyName = Vue.$filters.prettyCase(name)
-
+          //B
           r.push({
             ...heater,
             name,
@@ -507,6 +507,8 @@ export const getters: GetterTree<PrinterState, RootState> = {
             prettyName,
             key: e,
             minTemp: config?.min_temp,
+            targetMinTemp: config?.target_min_temp,
+            targetMaxTemp: config?.target_max_temp,
             maxTemp: config?.max_temp
           })
         }
