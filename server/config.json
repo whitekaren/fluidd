@@ -8,6 +8,14 @@
   "hosted": true,
   "themePresets": [
     {
+      "name": "Qidi Tech",
+      "color": "#5B7AEA",
+      "isDark": true,
+      "logo": {
+        "src": "logo_qidi.svg"
+      }
+    },
+    {
       "name": "Fluidd",
       "color": "#2196F3",
       "isDark": true,
@@ -87,14 +95,6 @@
       "isDark": false,
       "logo": {
         "src": "logo_prusa.svg"
-      }
-    },
-    {
-      "name": "Qidi Tech",
-      "color": "#5B7AEA",
-      "isDark": true,
-      "logo": {
-        "src": "logo_qidi.svg"
       }
     },
     {
