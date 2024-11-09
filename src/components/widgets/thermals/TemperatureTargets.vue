@@ -81,8 +81,8 @@
               :rules="[
                 $rules.required,
                 $rules.numberValid,
-                $rules.numberGreaterThanOrEqualOrZero(Math.max(item.targetMinTemp, item.minTemp)),
-                $rules.numberLessThanOrEqualOrZero(Math.min(item.targetMaxTemp, item.maxTemp))
+                $rules.numberGreaterThanOrEqualOrZero(item.targetMinTemp ? Math.max(item.targetMinTemp, item.minTemp) : item.minTemp ),
+                $rules.numberLessThanOrEqualOrZero(item.targetMaxTemp ? Math.min(item.targetMaxTemp, item.maxTemp) : item.maxTemp)
               ]"
               type="number"
               outlined
